@@ -27,11 +27,11 @@
         <div class="time">
           <ng-container *ngFor="let time of times; index as i">
             <button
-              [ngClass]="{
-                'border-green-500': avaliableTime[i],
-                'bg-green-400': selectedTime[i]
-              }"
-              class="w-[100px] border-solid border border-slate-200 rounded-md m-2"
+              [ngClass]="[
+                avaliableTime[i] ? 'border-green-500' : 'border-slate-200',
+                selectedTime[i] ? 'bg-green-400' : ''
+              ]"
+              class="w-[100px] border-solid border rounded-md m-2"
               (click)="bookingTime(i, time)"
             >
               {{ time }}
